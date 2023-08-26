@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+  scroll-behavior: smooth;
+  font-family: 'Open Sans', sans-serif;  margin: 0;
+  box-sizing: border-box;
+  
+}
+.app-container{
+  background-color: var(--background);
+  color: var(--black);
+  --black: #2C3333;
+  --dark-blue: #404C6A;
+  --white: #FFFFFF;
+  --bright-grey: #8F9FBE;
+  --blue: #3765DD;
+  --purple: #7464D2;
+  --input-stroke: #8F9FBE;
+  background: linear-gradient(176deg, rgba(244,253,255,1) 24%, rgba(215,224,255,1) 60%);
+  --button-linear: linear-gradient(94deg, rgba(55,101,221,1) 35%, rgba(116,100,210,1) 95%);
+  --second-button: linear-gradient(71deg, rgba(237,242,255,1) 27%, rgba(230,235,255,1) 44%);
+}

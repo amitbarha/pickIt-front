@@ -1,0 +1,40 @@
+.dashboard-container {
+    max-width: 800px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title-dash {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .table-dash {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f1f1f1;
+  }
+  
+  td {
+    background-color: #fff;
+  }
+  
+  /* Add more specific styling if needed */
+  

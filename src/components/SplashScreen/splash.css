@@ -1,0 +1,42 @@
+.splash-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo-splash{
+    font-size: xx-large;
+    font-weight: bold;
+
+}
+.splash-buttons{
+    display: flex;
+    flex-direction: column;
+}
+.blue-button{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: linear-gradient(94deg, rgba(55,101,221,1) 35%, rgba(116,100,210,1) 95%);
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    width: 80vw;
+    height: 5vh;
+}
+.white-button{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: linear-gradient(71deg, rgba(237,242,255,1) 27%, rgba(230,235,255,1) 44%);
+    color: var( --dark-blue);
+    font-size: large;
+    font-weight: 700;
+    width: 80vw;
+    height: 5vh;
+}

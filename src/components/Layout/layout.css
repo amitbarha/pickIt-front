@@ -1,0 +1,149 @@
+#navbar-switch-container{
+    width: 100px;
+    height: 100%;
+    margin-left: 90px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #navbar-logo-container{
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #navbar-logo-picture{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  
+  
+  .save-place-nav{
+    height: 64px;
+  }
+  .navbar-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #3765DD;
+    position: sticky;
+    top: 0;
+    color: white;
+    width: 100%;
+    z-index: 101;
+    height: 80px;
+  
+  }
+  .img-logo-div{
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+  }
+  .right-element-nav{
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+  }
+  .menu-item{
+    width: 150px;
+    height: 37.5px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    border-bottom: solid;
+  }
+  
+
+  .open-navbar{
+      height: 40vw;
+      background-color:  #3765DD;
+  }
+  .open-link-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-300);
+    font-size: large;
+    border-bottom: solid;
+    height: 4vh;
+  }
+  .open-link-style:hover{
+  background-color:  #af63ffb1 ;
+  }
+  
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    right: 36px;
+    top: 28px;
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #ffffff;
+  }
+  
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background-color: #3765DD;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    height: 80% !important;
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+  
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }

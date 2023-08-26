@@ -1,0 +1,48 @@
+.delivery-form-container {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.delivery-form-title {
+  text-align: center;
+  margin-top: 10vh;
+}
+#outlined-multiline-static {
+  width: 70vw;
+  border-color: var(--input-stroke);
+}
+.delivery-message {
+  display: flex;
+  flex-direction: column;
+}
+.phone-delivery-form {
+  width: 70vw;
+}
+.PhoneInput {
+  width: 80vw;
+}
+.PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  font-size: unset;
+  border-style: none;
+}
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.styled-input {
+  all: unset;
+  border: solid 1px var(--input-stroke);
+  height: 4vh;
+  border-radius: 4px;
+}
+.checkbox-accept {
+  display: flex;
+  align-items: center;
+}
+.checkbox-style {
+  height: 3vh;
+}
