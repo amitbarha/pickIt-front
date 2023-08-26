@@ -20,7 +20,7 @@ function DeliveryForm() {
       .post(`${HOST}/deliveries/create`, data)
       .then(({ data }) => {
         alert("המשלוח התקבל! \n בדקות הקרובות תישלח הודעה עם קישור לתשלום");
-        // reset();
+        reset();
       })
       .catch((err) => console.log(err.response.data + "basa"));
   };
