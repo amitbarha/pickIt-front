@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { HOST } from "../../utils";
+const googleApiKey = import.meta.env.VITE_GOOGLE_API_KEY
 
 function DeliveryForm() {
   const [phoneNumber, setPhoneNumber] = useState();
@@ -108,7 +109,7 @@ function DeliveryForm() {
             כתובת למשלוח *
           </label>
           <GooglePlacesAutocomplete
-            apiKey="AIzaSyB_TEVokcLyXDzPcRH1EeYK8bGCqOEbzWU"
+            apiKey={`${googleApiKey}`}
             selectProps={{
               googleAddress,
               onChange: setGoogleAddress,
