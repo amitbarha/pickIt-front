@@ -1,28 +1,66 @@
 import "./delivery-form.css";
 import TextField from "@mui/material/TextField";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import "./../Register/register.css";
 import "react-phone-number-input/style.css";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import PhoneInput from "react-phone-number-input";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { HOST } from "../../utils";
 
 function DeliveryForm() {
   const [phoneNumber, setPhoneNumber] = useState();
-  const { register, handleSubmit, reset } = useForm();
+  const [selectLocation, setSelectLocation] = useState();
+  const [googleAddress, setGoogleAddress] = useState(null);
+  const [cookieData, setCookieData] = useState();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  useEffect(() => {
+    if (Cookies.get("pickIt")) {
+      const data = JSON.parse(Cookies.get("pickIt"));
+      setCookieData(data);
+    }
+  }, []);
+  const checkLocation = () => {
+    if (selectLocation == null) {
+      return false;
+    } else return true;
+  };
   const onSubmit = (data) => {
+    console.log(googleAddress);
     data.phoneNumber = phoneNumber;
+    data.address = googleAddress.label;
     data.paid = false;
     data.delivered = false;
     console.log(data);
-    axios
-      .post(`${HOST}/deliveries/create`, data)
-      .then(({ data }) => {
-        alert("המשלוח התקבל! \n בדקות הקרובות תישלח הודעה עם קישור לתשלום");
-        reset();
-      })
-      .catch((err) => console.log(err.response.data + "basa"));
+    if (data.packageLocation == null) {
+      alert("אנא בחר את מיקום החבילה");
+    }
+    if (
+      window.confirm(
+        `חבילה מספר: ${data.packageNumber} \n מיקום החבילה: ${data.packageLocation} \n כתובת למשלוח: ${data.address} \n אשר אם הפרטים נכונים`
+      )
+    ) {
+      const savedData = {
+        fullName: data.fullName,
+        address: data.address,
+      };
+      axios
+        .post(`${HOST}/deliveries/create`, data)
+        .then(({ data }) => {
+          Cookies.set("pickIt", JSON.stringify(savedData));
+          alert("המשלוח התקבל! \n בדקות הקרובות תישלח הודעה עם קישור לתשלום");
+          reset();
+        })
+        .catch((err) => console.log(err.response.data + "basa"));
+    }
   };
   return (
     <div className="delivery-form-container">
@@ -61,6 +99,7 @@ function DeliveryForm() {
             id="address"
             type="text"
             required
+            defaultValue={cookieData && cookieData.fullName}
             placeholder="הכנס  שם מלא באנגלית"
           />
         </div>
@@ -68,14 +107,30 @@ function DeliveryForm() {
           <label htmlFor="address" className="input-label">
             כתובת למשלוח *
           </label>
-          <input
+          <GooglePlacesAutocomplete
+            apiKey="AIzaSyB_TEVokcLyXDzPcRH1EeYK8bGCqOEbzWU"
+            selectProps={{
+              googleAddress,
+              onChange: setGoogleAddress,
+              styles: {
+                control: (provided) => ({
+                  ...provided,
+                  background: "none",
+                  border: "solid #8F9FBE"
+                }),
+
+              },
+            }}
+          />
+          {/* <input
             {...register("address", { required: true })}
             className="styled-input"
             id="address"
             type="text"
+            defaultValue={cookieData&&cookieData.address}
             required
             placeholder="הכנס כתובת למשלוח"
-          />
+          /> */}
         </div>
         <br />
         <div className="form-inputs address-input">
@@ -95,14 +150,37 @@ function DeliveryForm() {
           <label htmlFor="address" className="input-label">
             מיקום החבילה *
           </label>
-          <input
-            {...register("packageLocation", { required: true })}
-            className="styled-input"
-            id="address"
-            type="text"
+          <select
+            name=""
+            id=""
+            className="option-location"
+            {...register("packageLocation", {
+              required: true,
+              validate: { checkLocation },
+            })}
+            onChange={(e) => setSelectLocation(e.target.value)}
             required
-            placeholder="סופר בונוס, סוכריית המזל, נויל'ה..."
-          />
+          >
+            <option value={null}>בחר מיקום מהרשימה</option>
+            <option value="סופר בונוס - כוכב יאיר">
+              סופר בונוס - כוכב יאיר
+            </option>
+            <option value=" נויול'ה - כוכב יאיר">נויל'ה - כוכב יאיר</option>
+            <option value="סוכריית המזל - צור יגאל">
+              סוכריית המזל - צור יגאל
+            </option>
+            <option value="1">אחר</option>
+          </select>
+          {selectLocation == 1 && (
+            <input
+              {...register("packageLocation", { required: true })}
+              className="styled-input"
+              id="address"
+              type="text"
+              required
+              placeholder="בחר מיקום אחר"
+            />
+          )}
         </div>
         {/* <div className="delivery-message">
   <label htmlFor="deliveryMessage" className="input-label">
