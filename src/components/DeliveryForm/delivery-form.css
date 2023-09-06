@@ -38,6 +38,7 @@
   border: solid 1px var(--input-stroke);
   height: 4vh;
   border-radius: 4px;
+  width: 80vw;
 }
 .option-location{
   background:none;
