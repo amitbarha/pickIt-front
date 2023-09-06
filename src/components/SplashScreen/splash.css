@@ -10,6 +10,8 @@
     font-weight: bold;
 
 }
+.logo-splash{
+}
 .splash-buttons{
     display: flex;
     flex-direction: column;
@@ -39,4 +41,8 @@
     font-weight: 700;
     width: 80vw;
     height: 5vh;
+}
+#fast-order-link{
+    background: rgb(216, 167, 103) !important;
+    color: white;
 }
