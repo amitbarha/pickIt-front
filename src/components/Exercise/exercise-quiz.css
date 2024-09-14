@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.answer-box {
+/* .answer-box {
   border-radius: 4px;
   height: 8vh;
   width: 90vw;
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-}
+} */
 
 .correct-answer {
   background-color: #d4edda;

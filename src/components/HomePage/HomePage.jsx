@@ -31,12 +31,8 @@ function HomePage() {
           </div>
         </Link>
       </div>
-      <div className="loader-div">
-        <div class="phone">
-          <span class="loader"></span>
-          <span class="text">...בקרוב</span>
-        </div>
-      </div>
+     
+      
     </div>
   );
 }
