@@ -8,10 +8,10 @@
 .logo-splash{
     font-size: xx-large;
     font-weight: bold;
+    width: 80vw;
 
 }
-.logo-splash{
-}
+
 .splash-buttons{
     display: flex;
     flex-direction: column;
