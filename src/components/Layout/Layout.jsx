@@ -11,7 +11,7 @@ function Layout() {
     <div>
       <div className="navbar-container">
         <Link id="navbar-logo-container" to={"/HomePage"}>
-          <div className="img-logo-div"><img className="img-logo-div" src="https://res.cloudinary.com/deiofeueo/image/upload/v1693072992/kssvviafyr04kgzj4bop.png" height={50} alt="" /></div>
+          {/* <div className="img-logo-div"><img className="img-logo-div" src="https://res.cloudinary.com/deiofeueo/image/upload/v1693072992/kssvviafyr04kgzj4bop.png" height={50} alt="" /></div> */}
         </Link>
       </div>
       <Menu

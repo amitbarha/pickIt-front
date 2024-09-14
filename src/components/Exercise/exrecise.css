@@ -1,0 +1,23 @@
+.exercise-container {
+  height: 100vh;
+}
+
+.topic-btn {
+  all: unset;
+  display: flex;
+  margin-bottom: 2vh;
+  border-radius: 8px;
+  background-color: #d7deef;
+  box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 10vh;
+}
+
+.questions-topics {
+  margin-top: 4vh;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

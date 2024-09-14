@@ -1,0 +1,116 @@
+.test-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-quiz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+  width: 100vw;
+  background-color: #3765DD;
+  color: white;
+}
+.right-side-nav{
+  padding-right: 2vw;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.left-side-nav{
+  padding-left: 2vw;
+}
+
+.question-context {
+  height: 20%;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 2vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 255, 0.607);
+  /* background-color: rgba(163, 163, 241, 0.607); */
+}
+
+.question-text {
+  text-align: center;
+}
+
+.answer-box {
+  border-radius: 4px;
+  height: 8vh;
+  width: 90vw;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+}
+
+.circle-fill {
+  margin-right: 1vh;
+  margin-left: 1vh;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.circle-mark {
+  background-color: rgba(0, 0, 255, 0.607);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 2px;
+}
+
+.answer-mark {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px;
+}
+
+.btn-back-next {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow-btn {
+  all: unset;
+  color: white;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 255, 0.607);
+  height: 5vh;
+  width: 20vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.circles-questions {
+  display: flex;
+  margin-bottom: 2vh;
+}
+
+.circle-question {
+  margin-right: 1vh;
+  margin-left: 1vh;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: rgba(245, 1, 1, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-question-mark {
+  border-color: red;
+  border-style: dotted;
+}
